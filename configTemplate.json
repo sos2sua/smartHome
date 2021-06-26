@@ -1,0 +1,23 @@
+{
+    "FAUXMO": {
+        "ip_address": "auto"
+    },
+    "PLUGINS": {
+        "SimpleHTTPPlugin": {
+            "DEVICES": [
+                {
+                    "port": 12340,
+                    "on_cmd": "http://$ipaddr$:$port$/movieTime/on",
+                    "off_cmd": "http://$ipaddr$:$port$/movieTime/off",
+                    "on_data": {"isOn": 1},
+                    "off_data": {"isOn": 0},
+                    "user": "this",
+                    "password": "that",
+                    "method": "GET",
+                    "name": "Movie Time",
+                    "use_fake_state": true
+                }
+            ]
+        }
+    }
+}
