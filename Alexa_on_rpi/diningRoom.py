@@ -1,8 +1,19 @@
+import sys
 import flask
 import socket
 import subprocess
 
 from gpiozero import LED
+
+CONF_PATH = ""
+
+if len(sys.argv) != 2:
+    print("Expecting path to Config Template!")
+    exit(0)
+
+CONF_PATH = sys.argv[1]
+
+print("Using Config Template File at "+CONF_PATH)
 
 led = LED(4)
 
@@ -18,7 +29,7 @@ except:
     exit(0)
 
 try:
-    fin = open("configTemplate.json", "rt")
+    fin = open(CONF_PATH + "configTemplate.json", "rt")
     fout = open("config.json", "wt")
     for line in fin:
         line = line.replace('$ipaddr$', ipAddr)

@@ -7,8 +7,8 @@
             "DEVICES": [
                 {
                     "port": 12340,
-                    "on_cmd": "http://192.168.1.4:5000/movieTime/on",
-                    "off_cmd": "http://192.168.1.4:5000/movieTime/off",
+                    "on_cmd": "http://192.168.1.4:5000/light/on",
+                    "off_cmd": "http://192.168.1.4:5000/light/off",
                     "on_data": {"isOn": 1},
                     "off_data": {"isOn": 0},
                     "user": "this",
