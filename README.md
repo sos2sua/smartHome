@@ -8,7 +8,8 @@ Dependencies:
 
 Running: `python3 alexaInterface.py`
 
-**Alexa_on_rpi** is a complete smart light switch for controling with Alexa voice commands
+**Alexa_on_rpi** is a complete smart light switch for controling with Alexa voice commands(work in progress)
+
 Dependencies:
 1. Fauxmo : `python3 -m pip install fauxmo`
 2. Flask: `python3 -m pip install Flask`
