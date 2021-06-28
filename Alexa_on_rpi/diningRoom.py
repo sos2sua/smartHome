@@ -1,9 +1,10 @@
-# fauxmo -c config.json -v
-
 import flask
 import socket
 import subprocess
 
+from gpiozero import LED
+
+led = LED(4)
 
 PORT = '5000'
 
@@ -45,12 +46,12 @@ app.config["DEBUG"] = True
 
 @app.route('/light/on', methods=['GET'])
 def lightOn():
-    print("Enjoy ur movie...")
+    led.on()
     return "0"
 
 @app.route('/light/off', methods=['GET'])
 def lightOff():
-    print("hope ur movie was good...")
+    led.off()
     return "1"
 
 app.run(host=ipAddr, port=PORT)

@@ -14,7 +14,7 @@
                     "user": "this",
                     "password": "that",
                     "method": "GET",
-                    "name": "light",
+                    "name": "Movie Time",
                     "use_fake_state": true
                 }
             ]
