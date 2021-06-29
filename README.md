@@ -1,18 +1,18 @@
 **SmartHome and DIY Home automation**
 
-**AlexaInterface** is a simple interfacing between Alex Voice Commands to python script
+**1. AlexaInterface** is a simple interfacing between Alex Voice Commands to python script
 
 Dependencies:
-1. Fauxmo : `python3 -m pip install fauxmo`
-2. Flask: `python3 -m pip install Flask`
+i. Fauxmo : `python3 -m pip install fauxmo`
+ii. Flask: `python3 -m pip install Flask`
 
 Running: `python3 alexaInterface.py`
 
-**Alexa_on_rpi** is a complete smart light switch for controling with Alexa voice commands(work in progress)
+**2. Alexa_on_rpi** is a complete smart light switch for controling with Alexa voice commands(work in progress)
 
 Dependencies:
-1. Fauxmo : `python3 -m pip install fauxmo`
-2. Flask: `python3 -m pip install Flask`
+i. Fauxmo : `python3 -m pip install fauxmo`
+ii. Flask: `python3 -m pip install Flask`
 
 Download the source and install the dependencies to Raspberry pi(tested with raspian)
 
