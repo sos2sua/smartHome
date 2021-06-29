@@ -21,8 +21,8 @@ or add the above line to `/home/pi/.bashrc` at the bottom for launching at boot
 
 After boot up or running the command directly ask Alexa to "alexa discover devices"
 
-Then saying "alexa light on" or "alexa light off" to turn on the light on or off.
+Then saying "alexa light on" or "alexa light off" to turn the light 'on' or 'off'.
 
-The python script triggers the rpi gpio pin number 4 high for on and low for off.
+The python script triggers the rpi gpio pin number 4 high for 'on' and low for 'off'.
 
 
