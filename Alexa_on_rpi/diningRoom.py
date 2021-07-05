@@ -67,12 +67,12 @@ def lightOff():
     return "1"
 
 @app.route('/sofaLight/on', methods=['GET'])
-def lightOn():
+def sofaLightOn():
     sofaLight.on()
     return "0"
 
 @app.route('/sofaLight/off', methods=['GET'])
-def lightOff():
+def sofaLightOff():
     sofaLight.off()
     return "1"
 
