@@ -15,7 +15,8 @@ CONF_PATH = sys.argv[1]
 
 print("Using Config Template File at "+CONF_PATH)
 
-led = LED(4)
+lamp = LED(4)
+sofaLight = LED(17)
 
 PORT = '5000'
 
@@ -55,14 +56,24 @@ app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
 
-@app.route('/light/on', methods=['GET'])
+@app.route('/lamp/on', methods=['GET'])
 def lightOn():
-    led.on()
+    lamp.on()
     return "0"
 
-@app.route('/light/off', methods=['GET'])
+@app.route('/lamp/off', methods=['GET'])
 def lightOff():
-    led.off()
+    lamp.off()
+    return "1"
+
+@app.route('/sofaLight/on', methods=['GET'])
+def lightOn():
+    sofaLight.on()
+    return "0"
+
+@app.route('/sofaLight/off', methods=['GET'])
+def lightOff():
+    sofaLight.off()
     return "1"
 
 app.run(host=ipAddr, port=PORT)

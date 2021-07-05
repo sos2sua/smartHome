@@ -7,14 +7,50 @@
             "DEVICES": [
                 {
                     "port": 12340,
-                    "on_cmd": "http://$ipaddr$:$port$/light/on",
-                    "off_cmd": "http://$ipaddr$:$port$/light/off",
+                    "on_cmd": "http://$ipaddr$:$port$/lamp/on",
+                    "off_cmd": "http://$ipaddr$:$port$/lamp/off",
+                    "on_data": {"isOn": 1},
+                    "off_data": {"isOn": 0},
+                    "user": "this",
+                    "password": "that",
+                    "method": "GET",
+                    "name": "Lamp",
+                    "use_fake_state": true
+                },
+                {
+                    "port": 12341,
+                    "on_cmd": "http://$ipaddr$:$port$/sofaLight/on",
+                    "off_cmd": "http://$ipaddr$:$port$/sofaLight/off",
+                    "on_data": {"isOn": 1},
+                    "off_data": {"isOn": 0},
+                    "user": "this",
+                    "password": "that",
+                    "method": "GET",
+                    "name": "Sofa Light",
+                    "use_fake_state": true
+                },
+                {
+                    "port": 12342,
+                    "on_cmd": "http://switch1.local/ch1/on",
+                    "off_cmd": "http://switch1.local/ch1/off",
                     "on_data": {"isOn": 1},
                     "off_data": {"isOn": 0},
                     "user": "this",
                     "password": "that",
                     "method": "GET",
                     "name": "Light",
+                    "use_fake_state": true
+                },
+                {
+                    "port": 12343,
+                    "on_cmd": "http://switch1.local/ch2/on",
+                    "off_cmd": "http://switch1.local/ch2/off",
+                    "on_data": {"isOn": 1},
+                    "off_data": {"isOn": 0},
+                    "user": "this",
+                    "password": "that",
+                    "method": "GET",
+                    "name": "Fan",
                     "use_fake_state": true
                 }
             ]

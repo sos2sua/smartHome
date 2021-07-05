@@ -43,7 +43,7 @@ void setup() {
   Serial.print("IP address:\t");
   Serial.println(WiFi.localIP());           // Send the IP address of the ESP8266 to the computer
 
-  if (!mdns.begin("switch1",WiFi.localIP())) {             // Start the mDNS responder for esp8266.local
+  if (!mdns.begin("switch1",WiFi.localIP())) {             // Start the mDNS responder for switch1.local
     Serial.println("Error setting up MDNS responder!");
   }
   Serial.println("mDNS responder started");
