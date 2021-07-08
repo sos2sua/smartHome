@@ -1,9 +1,12 @@
 import sys
+import time
 import flask
 import socket
 import subprocess
 
-from gpiozero import LED
+ON_RPI = False
+if ON_RPI == True:
+    from gpiozero import LED
 
 CONF_PATH = ""
 
@@ -15,19 +18,22 @@ CONF_PATH = sys.argv[1]
 
 print("Using Config Template File at "+CONF_PATH)
 
-lamp = LED(4)
-sofaLight = LED(17)
+if ON_RPI == True:
+    lamp = LED(4)
+    sofaLight = LED(17)
 
 PORT = '5000'
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-try:
-    s.connect(("8.8.8.8", 80))
-    ipAddr = s.getsockname()[0]
-    s.close()
-except:
-    print("Failed to Retrieve system IP!")
-    exit(0)
+while(True):
+    try:
+        s.connect(("8.8.8.8", 80))
+        ipAddr = s.getsockname()[0]
+        s.close()
+        break
+    except:
+        print("Failed to Retrieve system IP!")
+        time.sleep(15)
 
 try:
     fin = open(CONF_PATH + "configTemplate.json", "rt")
@@ -58,22 +64,26 @@ app.config["DEBUG"] = True
 
 @app.route('/lamp/on', methods=['GET'])
 def lightOn():
-    lamp.on()
+    if ON_RPI == True:
+        lamp.on()
     return "0"
 
 @app.route('/lamp/off', methods=['GET'])
 def lightOff():
-    lamp.off()
+    if ON_RPI == True:
+        lamp.off()
     return "1"
 
 @app.route('/sofaLight/on', methods=['GET'])
 def sofaLightOn():
-    sofaLight.on()
+    if ON_RPI == True:
+        sofaLight.on()
     return "0"
 
 @app.route('/sofaLight/off', methods=['GET'])
 def sofaLightOff():
-    sofaLight.off()
+    if ON_RPI == True:
+        sofaLight.off()
     return "1"
 
 app.run(host=ipAddr, port=PORT)

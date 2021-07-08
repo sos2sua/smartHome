@@ -7,14 +7,50 @@
             "DEVICES": [
                 {
                     "port": 12340,
-                    "on_cmd": "http://192.168.1.4:5000/light/on",
-                    "off_cmd": "http://192.168.1.4:5000/light/off",
+                    "on_cmd": "http://192.168.0.106:5000/lamp/on",
+                    "off_cmd": "http://192.168.0.106:5000/lamp/off",
                     "on_data": {"isOn": 1},
                     "off_data": {"isOn": 0},
                     "user": "this",
                     "password": "that",
                     "method": "GET",
-                    "name": "Movie Time",
+                    "name": "Lamp",
+                    "use_fake_state": true
+                },
+                {
+                    "port": 12341,
+                    "on_cmd": "http://192.168.0.106:5000/sofaLight/on",
+                    "off_cmd": "http://192.168.0.106:5000/sofaLight/off",
+                    "on_data": {"isOn": 1},
+                    "off_data": {"isOn": 0},
+                    "user": "this",
+                    "password": "that",
+                    "method": "GET",
+                    "name": "Sofa Light",
+                    "use_fake_state": true
+                },
+                {
+                    "port": 12342,
+                    "on_cmd": "http://switch1.local/ch1/on",
+                    "off_cmd": "http://switch1.local/ch1/off",
+                    "on_data": {"isOn": 1},
+                    "off_data": {"isOn": 0},
+                    "user": "this",
+                    "password": "that",
+                    "method": "GET",
+                    "name": "Light",
+                    "use_fake_state": true
+                },
+                {
+                    "port": 12343,
+                    "on_cmd": "http://switch1.local/ch2/on",
+                    "off_cmd": "http://switch1.local/ch2/off",
+                    "on_data": {"isOn": 1},
+                    "off_data": {"isOn": 0},
+                    "user": "this",
+                    "password": "that",
+                    "method": "GET",
+                    "name": "Fan",
                     "use_fake_state": true
                 }
             ]
