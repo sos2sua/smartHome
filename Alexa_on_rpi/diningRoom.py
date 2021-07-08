@@ -4,7 +4,7 @@ import flask
 import socket
 import subprocess
 
-ON_RPI = False
+ON_RPI = True
 if ON_RPI == True:
     from gpiozero import LED
 
