@@ -1,3 +1,5 @@
+https://youtu.be/CMPirJTQO6k
+
 **SmartHome and DIY Home automation**
 
 **1. AlexaInterface** is a simple interfacing between Alex Voice Commands to python script
