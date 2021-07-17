@@ -21,6 +21,8 @@ print("Using Config Template File at "+CONF_PATH)
 if ON_RPI == True:
     lamp = LED(4)
     sofaLight = LED(17)
+    sofaF = LED(20)
+    sofaB = LED(21)
 
 PORT = '5000'
 
@@ -84,6 +86,20 @@ def sofaLightOn():
 def sofaLightOff():
     if ON_RPI == True:
         sofaLight.off()
+    return "1"
+
+@app.route('/sofa/on', methods=['GET'])
+def sofaOn():
+    if ON_RPI == True:
+        sofaB.off()
+        SofaF.on()
+    return "0"
+
+@app.route('/sofa/off', methods=['GET'])
+def sofaOff():
+    if ON_RPI == True:
+        sofaF.off()
+        sofaB.on()
     return "1"
 
 app.run(host=ipAddr, port=PORT)

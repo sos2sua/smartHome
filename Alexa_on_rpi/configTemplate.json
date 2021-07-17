@@ -31,8 +31,8 @@
                 },
                 {
                     "port": 12342,
-                    "on_cmd": "http://switch1.local/ch1/on",
-                    "off_cmd": "http://switch1.local/ch1/off",
+                    "on_cmd": "http://switch1.local/ch1/off",
+                    "off_cmd": "http://switch1.local/ch1/on",
                     "on_data": {"isOn": 1},
                     "off_data": {"isOn": 0},
                     "user": "this",
@@ -43,8 +43,8 @@
                 },
                 {
                     "port": 12343,
-                    "on_cmd": "http://switch1.local/ch2/on",
-                    "off_cmd": "http://switch1.local/ch2/off",
+                    "on_cmd": "http://switch1.local/ch2/off",
+                    "off_cmd": "http://switch1.local/ch2/on",
                     "on_data": {"isOn": 1},
                     "off_data": {"isOn": 0},
                     "user": "this",
@@ -52,7 +52,20 @@
                     "method": "GET",
                     "name": "Fan",
                     "use_fake_state": true
-                }
+		},
+		{
+		    "port": 12344,
+		    "on_cmd":"http://$ipaddr$:$port$/sofa/on",
+		    "off_cmd":"http://$ipaddr$:$port$/sofa/off",
+		    "on_data":{"isOn": 1},
+		    "off_data":{"isOn": 0},
+		    "user":"this",
+		    "password": "that",
+		    "method": "GET",
+		    "name": "sofa",
+		    "use_fake_state": true
+		}
+
             ]
         }
     }
